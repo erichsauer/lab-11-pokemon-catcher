@@ -2,7 +2,7 @@
 #caught-so-far {
     margin-right: 10px;
     font-size: 2rem;
-    margin-left: -10px;
+    margin-left: -20px;
 }
 
 #game-container {
@@ -16,8 +16,50 @@ content>img {
     height: 200px;
 }
 
-.results-container {
-    display: flex;
-    flex-direction: column;
+#results-container {
+    display: none;
     text-align: center;
+    justify-content: center;
+    justify-items: center;
+}
+
+button {
+    height: 50px;
+    font-size: 1.5rem;
+    letter-spacing: 10px;
+    color: red;
+    background-color: white;
+    border: solid 3px lightgray;
+    border-radius: 25px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+td>img {
+    height: 100px;
+}
+
+thead {
+    font-size: 1.5rem;
+}
+
+td {
+    font-size: 1.2rem;
+    vertical-align: middle;
+}
+
+th>img {
+    width: 25px;
+}
+
+th:nth-child(3) {
+    width: 75px;
+}
+
+td:nth-child(4) {
+    font-weight: bolder;
+}
+
+div>img {
+    margin-top: 20px;
 }

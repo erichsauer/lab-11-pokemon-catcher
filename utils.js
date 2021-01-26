@@ -1,12 +1,13 @@
 import pokemonArray from './data.js';
 import { getPokemonStats, incrementCaught, incrementSeen } from './pokeArrayUtils.js';
+import { renderPokeStatsTable } from './renderTable.js';
 
 const gameContainer = document.getElementById('game-container');
 const caughtSoFar = document.getElementById('caught-so-far');
 const resultsString = document.getElementById('results-div');
+const resultsContainer = document.getElementById('results-container');
 
 let round = 0;
-getPokemonStats();
 
 export function findById(array, id) {
     for (const item of array) {
@@ -65,7 +66,7 @@ export function getThreePokemon() {
 function renderPokemon(pokemon) {
     // create a new image
     const image = document.createElement('img');
-
+    const resultsTable = document.getElementById('table-body');
     // set image attributes & add click handler
     image.src = pokemon.url_image;
     image.alt = pokemon.pokemon;
@@ -77,9 +78,16 @@ function renderPokemon(pokemon) {
             caughtSoFar.textContent = round;
         } else {
             round++;
+            const currentStats = getPokemonStats();
+
+            for (const pokemon of currentStats) {
+                let newRow = renderPokeStatsTable(pokemonArray, currentStats, pokemon.pokemon);
+                resultsTable.append(newRow);
+            }
+
             caughtSoFar.textContent = round;
             gameContainer.style.display = 'none';
-            resultsString.style.display = 'block';
+            resultsContainer.style.display = 'block';
             // resultsString.textContent = ``;
         }
     });
