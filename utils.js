@@ -4,7 +4,7 @@ import { renderPokeStatsTable } from './renderTable.js';
 
 const gameContainer = document.getElementById('game-container');
 const caughtSoFar = document.getElementById('caught-so-far');
-const resultsTable = document.getElementById('results-table');
+const resultsTable = document.getElementById('table-body');
 const resultsContainer = document.getElementById('results-container');
 const resetButton = document.getElementById('reset-button');
 const nerdButton = document.getElementById('nerd-button');
@@ -21,6 +21,7 @@ resetButton.addEventListener('click', () => {
     caughtSoFar.textContent = 0;
     gameContainer.style.display = 'flex';
     resultsContainer.style.display = 'none';
+    resultsTable.textContent = '';
 });
 
 nerdButton.addEventListener('click', () => {
