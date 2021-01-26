@@ -1,27 +1,37 @@
-const caughtSoFar = document.getElementById('caught-so-far');
+import { mungeSeen, mungeCaught, mungeNames, mungePics } from '../charts/mungeUtils.js';
+import { getPokemonStats } from '../pokeArrayUtils.js';
+
+const caughtSoFar = document.getElementById('caught-so-far'); 
+const currentStats = getPokemonStats();
+
+const seenArray = mungeSeen(currentStats);
+const caughtArray = mungeCaught(currentStats);
+const nameArray = mungeNames(currentStats);
+const picArray = mungePics(currentStats);
 
 caughtSoFar.textContent = 10;
+console.log(picArray);
 
 var ctx = document.getElementById('myChart').getContext('2d');
-var stackedBar = new Chart(ctx, {
+var stackedBar = new Chart(ctx, { // eslint-ignore
     // The type of chart we want to create
     type: 'bar',
 
     // The data for our dataset
     data: {
-        labels: ['Pokemon1', 'pok2', 'pok3'],
+        labels: [nameArray],
         datasets: [
             {
                 stack: 'seen',
                 label: 'Seen',
                 backgroundColor: 'lightslategray',
-                data: [3, 10, 5]
+                data: [seenArray]
             },
             {
                 stack: 'seen',
                 label: 'Caught',
                 backgroundColor: 'red',
-                data: [0, 5, 5]
+                data: [caughtArray]
             }
 
         ]
