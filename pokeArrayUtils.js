@@ -5,11 +5,12 @@ const POKEMON = 'POKEMON';
 
 export function getPokemonStats() {
     // get stats from localStorage
-    const initialStatsArray = JSON.stringify([]);
+    const initialStatsArray = [];
+    const initialStatsString = JSON.stringify(initialStatsArray);
     const currentStatsArray = localStorage.getItem(POKEMON);
     // if no local storage, initialize empty array
     if (!currentStatsArray) {
-        localStorage.setItem(POKEMON, initialStatsArray);
+        localStorage.setItem(POKEMON, initialStatsString);
     } else {
     // otherwise, return stats as an array
         const parsedStats = JSON.parse(currentStatsArray);
