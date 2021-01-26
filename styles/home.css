@@ -33,6 +33,8 @@ button {
     border-radius: 25px;
     padding-left: 20px;
     padding-right: 20px;
+    margin: 5px;
+    display: block;
 }
 
 td>img {
@@ -63,3 +65,4 @@ td:nth-child(4) {
 div>img {
     margin-top: 20px;
 }
+

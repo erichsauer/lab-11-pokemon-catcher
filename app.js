@@ -2,8 +2,8 @@
 import { getThreePokemon } from './utils.js';
 import { getPokemonStats } from './pokeArrayUtils.js';
 // initialize state
-// set event listeners to update state and DOM
-getPokemonStats();
-getThreePokemon();
 
-console.log();
+// why oh why  must I call this function here?
+getPokemonStats();
+
+getThreePokemon();

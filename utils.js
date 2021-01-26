@@ -4,10 +4,28 @@ import { renderPokeStatsTable } from './renderTable.js';
 
 const gameContainer = document.getElementById('game-container');
 const caughtSoFar = document.getElementById('caught-so-far');
-const resultsString = document.getElementById('results-div');
+const resultsTable = document.getElementById('results-table');
 const resultsContainer = document.getElementById('results-container');
+const resetButton = document.getElementById('reset-button');
+const nerdButton = document.getElementById('nerd-button');
 
 let round = 0;
+
+resetButton.addEventListener('click', () => {
+    localStorage.clear();
+    getPokemonStats();
+    getThreePokemon();
+
+    round = 0;
+    
+    caughtSoFar.textContent = 0;
+    gameContainer.style.display = 'flex';
+    resultsContainer.style.display = 'none';
+});
+
+nerdButton.addEventListener('click', () => {
+    window.location.href = './charts/';
+});
 
 export function findById(array, id) {
     for (const item of array) {
@@ -56,17 +74,9 @@ export function getThreePokemon() {
     incrementSeen(pokemonThree.pokemon);
 }
 
-// function renderResultsTable {
-//     const statsArray = getPokemonStats()
-//     for (const item of statsArray) {
-        
-//     }
-// }
-
 function renderPokemon(pokemon) {
     // create a new image
     const image = document.createElement('img');
-    const resultsTable = document.getElementById('table-body');
     // set image attributes & add click handler
     image.src = pokemon.url_image;
     image.alt = pokemon.pokemon;
@@ -84,11 +94,9 @@ function renderPokemon(pokemon) {
                 let newRow = renderPokeStatsTable(pokemonArray, currentStats, pokemon.pokemon);
                 resultsTable.append(newRow);
             }
-
             caughtSoFar.textContent = round;
             gameContainer.style.display = 'none';
             resultsContainer.style.display = 'block';
-            // resultsString.textContent = ``;
         }
     });
     return image;

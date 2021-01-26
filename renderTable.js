@@ -1,5 +1,6 @@
 import { findById } from './utils.js';
 
+
 export function renderPokeStatsTable(pokemonArray, statsArray, id) {
     const inventoryItem = findById(pokemonArray, id);
     const statsItem = findById(statsArray, id);
