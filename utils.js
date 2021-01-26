@@ -55,6 +55,13 @@ export function getThreePokemon() {
     incrementSeen(pokemonThree.pokemon);
 }
 
+// function renderResultsTable {
+//     const statsArray = getPokemonStats()
+//     for (const item of statsArray) {
+        
+//     }
+// }
+
 function renderPokemon(pokemon) {
     // create a new image
     const image = document.createElement('img');
@@ -65,12 +72,15 @@ function renderPokemon(pokemon) {
     image.addEventListener('click', () => {
         getThreePokemon();
         incrementCaught(pokemon.pokemon);
-        if (round < 10) {
+        if (round < 9) {
             round++;
             caughtSoFar.textContent = round;
         } else {
+            round++;
+            caughtSoFar.textContent = round;
             gameContainer.style.display = 'none';
             resultsString.style.display = 'block';
+            // resultsString.textContent = ``;
         }
     });
     return image;
