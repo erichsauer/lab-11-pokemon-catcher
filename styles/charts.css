@@ -89,5 +89,6 @@ div>img {
 .pokemon-container {
     display: flex;
     width: 100%;
+    height: fit-content;
     justify-content: space-around;
 }
