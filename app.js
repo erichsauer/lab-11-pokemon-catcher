@@ -1,9 +1,16 @@
 // import functions and grab DOM elements
-import { getThreePokemon } from './utils.js';
+import { getThreePokemon, resetStuff } from './utils.js';
 import { getPokemonStats } from './pokeArrayUtils.js';
-// initialize state
 
-// why oh why  must I call this function here?
-getPokemonStats();
+const resetButton = document.getElementById('reset-button');
+const nerdButton = document.getElementById('nerd-button');
 
-getThreePokemon();
+resetStuff();
+
+resetButton.addEventListener('click', () => {
+    resetStuff();
+});
+
+nerdButton.addEventListener('click', () => {
+    window.location.href = './charts/';
+});

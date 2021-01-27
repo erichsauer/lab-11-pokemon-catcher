@@ -21,10 +21,3 @@ export function mungeNames(statsArray) {
     }
     return namesArray;
 }
-export function mungePics(pokeArray) {
-    let imageArray = [];
-    for (const item of pokeArray) {
-        imageArray.push(item.url_image);
-    }
-    return imageArray;
-}

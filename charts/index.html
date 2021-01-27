@@ -8,26 +8,29 @@
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles/reset.css">
     <link rel="stylesheet" href="../styles/style.css">
-    <link rel="stylesheet" href="../styles/home.css">
+    <link rel="stylesheet" href="../styles/charts.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <title>Nerd Out On Pokemon Stats!</title>
 </head>
 
 <body>
     <header>
+        <button id="back-button">RESET</button>
         <div class="gutter-right logo">
             <img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fimg4.wikia.nocookie.net%2F__cb20140520015336%2Fpokemon-fano%2Fimages%2F6%2F6f%2FPoke_Ball.png&f=1&nofb=1"/>
         </div>
         <div id="caught-so-far">caught so far</div>
     </header>
-    <main>
+    <main class="chart-container">
         <canvas id="myChart"></canvas>
+        <div id="pokemon-container" class="pokemon-container">
+        </div>
     </main>
     <footer>
         <div class="copy gutter-right">&copy; 2020 Alchemy Code Lab</div>
     </footer>
 
-    <script type="module" src="app.js"></script>
+    <script type="module" src="charts.js"></script>
 </body>
 
 </html>
