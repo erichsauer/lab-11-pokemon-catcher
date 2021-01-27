@@ -1,6 +1,5 @@
 // import functions and grab DOM elements
-import { getThreePokemon, resetStuff } from './utils.js';
-import { getPokemonStats } from './pokeArrayUtils.js';
+import { resetStuff } from './utils.js';
 
 const resetButton = document.getElementById('reset-button');
 const nerdButton = document.getElementById('nerd-button');

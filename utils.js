@@ -6,6 +6,8 @@ const gameContainer = document.getElementById('game-container');
 const caughtSoFar = document.getElementById('caught-so-far');
 const resultsTable = document.getElementById('table-body');
 const resultsContainer = document.getElementById('results-container');
+const resetButton = document.getElementById('reset-button');
+const nerdButton = document.getElementById('nerd-button');
 
 let round = 0;
 
@@ -87,12 +89,15 @@ function renderPokemon(pokemon) {
             caughtSoFar.textContent = 10;
             gameContainer.style.display = 'none';
             resultsContainer.style.display = 'block';
+            resetButton.style.display = 'block';
+            nerdButton.style.display = 'block';        
         }
     });
     return image;
 }
 
 export function resetStuff() {
+
     localStorage.clear();
     getPokemonStats();
     getThreePokemon();
@@ -100,5 +105,8 @@ export function resetStuff() {
     caughtSoFar.textContent = 0;
     gameContainer.style.display = 'flex';
     resultsContainer.style.display = 'none';
+    resetButton.style.display = 'none';
+    nerdButton.style.display = 'none';
+
     resultsTable.textContent = '';
 }

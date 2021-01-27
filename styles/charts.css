@@ -39,6 +39,11 @@ button {
     margin-top: 15px;
 }
 
+button:hover {
+    color: white;
+    background-color: red;
+}
+
 td>img {
     height: 100px;
 }
